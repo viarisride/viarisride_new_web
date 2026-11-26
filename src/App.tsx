@@ -3,6 +3,7 @@ import HeroIntroReveal from './components/HeroIntroReveal';
 import ViarisFeatureSection from './components/ViarisFeatureSection';
 import ImpactCalculator from './components/ImpactCalculator';
 import DownloadAppSection from './components/DownloadAppSection';
+import CommunityRegistration from './components/CommunityRegistration';
 import BenefitsSection from './components/BenefitsSection';
 import CommunityExchangeSection from './components/CommunityExchangeSection';
 import Footer from './components/Footer';
@@ -189,6 +190,7 @@ export default function App() {
       <BenefitsSection />
       <ImpactCalculator />
       <DownloadAppSection />
+      <CommunityRegistration />
       <div id="how-it-works" /><div id="get-app" />
       </main>
       <Footer />
