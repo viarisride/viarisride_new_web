@@ -5,7 +5,7 @@ export default function CommunityExchangeSection() {
     <section className="ce-section" id="communities" aria-label="Viaris communities">
       <img
         className="ce-reference-artwork"
-        src="/viarisride_new_web/images/Community%20Rides,%20Shared%20Journeys.png"
+        src="/images/Community%20Rides,%20Shared%20Journeys.png"
         alt="Viaris community network connecting neighbours travelling to the same gym, school, park and workplace, with options to find or offer a ride"
         width="1672"
         height="941"
