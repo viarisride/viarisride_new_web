@@ -33,7 +33,7 @@ function BenefitCard({ item, index }: { item: typeof benefits[number]; index: nu
       <div className="vb-card-visual">
         <img
           className="vb-card-icon"
-          src={`/viaris-website/images/${item.image}`}
+          src={`/viarisride_new_web/images/${item.image}`}
           alt={item.alt}
           loading="lazy"
           decoding="async"

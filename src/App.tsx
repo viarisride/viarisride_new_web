@@ -120,7 +120,7 @@ export default function App() {
       <HeroIntroReveal />
       <main className="viaris-home">
       <header className="site-header">
-        <a className="wordmark" href="#home" aria-label="Viaris Ride home"><img src="/viaris-website/images/logo.jpeg" alt="Viaris Ride" /></a>
+        <a className="wordmark" href="#home" aria-label="Viaris Ride home"><img src="/viarisride_new_web/images/logo.jpeg" alt="Viaris Ride" /></a>
         <nav className="main-nav" aria-label="Main navigation">
           <a className="active" href="#home">Home</a>
           <a href="#experiences">Experiences</a>

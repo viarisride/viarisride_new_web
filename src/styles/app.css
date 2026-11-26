@@ -21,7 +21,7 @@ button, input { font: inherit; }
 .menu-button { display: none; border: 0; background: transparent; color: #1c241d; }
 .hero { max-width: 1800px; margin: 0 auto; }
 .hero-photo { position: relative; height: min(760px, calc(100svh - 112px)); min-height: 650px; max-height: 820px; overflow: hidden; isolation: isolate; border-radius: 25px; background: #d8e0d0; }
-.hero-image { position: absolute; z-index: 0; inset: 0; background-image: url('/viaris-website/images/Lakeview%20Residency%20Commute.png'); background-size: cover; background-position: center 55%; transform: scale(1.015); }
+.hero-image { position: absolute; z-index: 0; inset: 0; background-image: url('/viarisride_new_web/images/Lakeview%20Residency%20Commute.png'); background-size: cover; background-position: center 55%; transform: scale(1.015); }
 .hero-wash { position: absolute; z-index: 1; inset: 0; background: rgba(0,0,0,.24); pointer-events: none; }
 .hero-topline, .hero-bottomline { position: absolute; left: 36px; right: 36px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,.88); font-size: 9px; letter-spacing: .16em; font-weight: 700; }
 .hero-topline { top: 25px; }
@@ -103,7 +103,7 @@ button, input { font: inherit; }
 .turn-benefits span { display: flex; align-items: center; gap: 12px; color: #e8eee3; font-size: 12px; }
 .turn-benefits svg { color: #b8df86; }
 .shared-journey { max-width: 650px; width: 100%; justify-self: end; }
-.shared-photo { min-height: 410px; border-radius: 4px; background-image: linear-gradient(180deg,rgba(12,22,14,.02),rgba(12,22,14,.18)),url('/viaris-website/images/Lakeview%20Residency%20Commute.png'); background-size: cover; background-position: center 60%; }
+.shared-photo { min-height: 410px; border-radius: 4px; background-image: linear-gradient(180deg,rgba(12,22,14,.02),rgba(12,22,14,.18)),url('/viarisride_new_web/images/Lakeview%20Residency%20Commute.png'); background-size: cover; background-position: center 60%; }
 .shared-route { display: flex; align-items: center; gap: 12px; margin: 24px 0 20px; color: #c8dda9; }
 .shared-route-line { flex: 1; height: 1px; background: linear-gradient(90deg,#b9d992,#6e8e58); }
 .shared-route-point, .shared-route-end { display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid #91ae72; border-radius: 50%; }
@@ -144,11 +144,11 @@ button, input { font: inherit; }
 .chapter-visual{position:relative;min-width:0;height:480px;overflow:hidden}
 .community-visual{height:500px;border-radius:2px 100px 2px 2px}
 .story-photo{position:absolute;inset:0;background-size:cover;background-position:center}
-.community-photo{background-image:url('/viaris-website/images/1st.png');background-position:center 48%}
+.community-photo{background-image:url('/viarisride_new_web/images/1st.png');background-position:center 48%}
 .commute-visual{height:420px;border-radius:100px 2px 2px 2px}
-.commute-photo{background-image:url('/viaris-website/images/2nd.png');background-position:20% 60%}
+.commute-photo{background-image:url('/viarisride_new_web/images/2nd.png');background-position:20% 60%}
 .connection-visual{height:490px;border-radius:2px 2px 100px 2px;background:#e8ecdf}
-.connection-photo{background-image:url('/viaris-website/images/3rd.png');background-position:70% 45%;filter:saturate(.82)}
+.connection-photo{background-image:url('/viarisride_new_web/images/3rd.png');background-position:70% 45%;filter:saturate(.82)}
 .visual-caption{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;color:white;font-size:8px;letter-spacing:.15em;font-weight:700;text-shadow:0 1px 10px rgba(0,0,0,.45)}
 .chapter-visual:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(13,24,15,.4));pointer-events:none}
 .connection-line{position:absolute;z-index:2;left:12%;right:12%;top:54%;height:1px;background:#c4e49c;box-shadow:0 0 16px rgba(190,230,145,.6)}
@@ -157,7 +157,7 @@ button, input { font: inherit; }
 .route-facts{display:flex;flex-wrap:wrap;gap:22px;margin-top:35px}
 .route-facts span{display:flex;align-items:center;gap:8px;color:#718365;font-size:11px}
 .shared-visual{height:550px;border-radius:2px 100px 2px 2px;background:#1d3025}
-.shared-photo-image{background-image:url('/viaris-website/images/Lakeview%20Residency%20Commute.png');background-position:center 55%}
+.shared-photo-image{background-image:url('/viarisride_new_web/images/Lakeview%20Residency%20Commute.png');background-position:center 55%}
 .shared-story-copy h3{font-size:clamp(48px,5.2vw,74px)}
 .shared-outcomes{display:flex;flex-direction:column;gap:13px;margin-top:30px}
 .shared-outcomes span{color:#64745a;font-size:12px}
@@ -199,13 +199,13 @@ button, input { font: inherit; }
 .community-visual{height:450px;border-radius:2px 112px 2px 2px}
 .story-photo{position:absolute;inset:0;background-repeat:no-repeat;background-size:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .chapter-visual.is-visible .story-photo{transform:scale(1.025)}
-.community-photo{background-image:url('/viaris-website/images/1st.png');background-position:center 10%}
+.community-photo{background-image:url('/viarisride_new_web/images/1st.png');background-position:center 10%}
 .commute-visual{height:390px;border-radius:110px 2px 2px 2px}
-.commute-photo{background-image:url('/viaris-website/images/2nd.png');background-position:18% 70%;filter:saturate(.85)}
+.commute-photo{background-image:url('/viarisride_new_web/images/2nd.png');background-position:18% 70%;filter:saturate(.85)}
 .connection-visual{height:430px;border-radius:2px 2px 110px 2px}
-.connection-photo{background-image:url('/viaris-website/images/3rd.png');background-position:76% 38%;filter:saturate(.92)}
+.connection-photo{background-image:url('/viarisride_new_web/images/3rd.png');background-position:76% 38%;filter:saturate(.92)}
 .shared-visual{height:460px;border-radius:2px 110px 2px 2px}
-.shared-photo-image{background-image:url('/viaris-website/images/Lakeview%20Residency%20Commute.png');background-position:center 58%}
+.shared-photo-image{background-image:url('/viarisride_new_web/images/Lakeview%20Residency%20Commute.png');background-position:center 58%}
 .visual-caption{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;color:white;font-size:8px;letter-spacing:.15em;font-weight:700;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 .chapter-visual:after{content:'';position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(13,24,15,.36));pointer-events:none}
 .route-facts{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px}

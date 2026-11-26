@@ -11,7 +11,7 @@ const FEATURES = [
     id: 'intercity',
     title: 'Intercity',
     description: 'Share the road between cities. Find a seat, split the fuel and make the distance feel shorter.',
-    image: '/viaris-website/images/35cfc7c0-ac90-4a34-9ad2-45093a5ce58b.png',
+    image: '/viarisride_new_web/images/35cfc7c0-ac90-4a34-9ad2-45093a5ce58b.png',
     icon: Route,
     path: 'M520 30 C486 54 420 60 350 66 C260 74 205 82 176 116 C158 138 153 184 150 236'
   },
@@ -19,7 +19,7 @@ const FEATURES = [
     id: 'daily-commute',
     title: 'Daily commute',
     description: 'Find people heading your way to work, college or business — once, or on the same weekdays.',
-    image: '/viaris-website/images/69c28471-e7d9-4638-99bd-69898b699132.png',
+    image: '/viarisride_new_web/images/69c28471-e7d9-4638-99bd-69898b699132.png',
     icon: CalendarDays,
     path: 'M520 30 C520 82 520 156 520 236'
   },
@@ -27,7 +27,7 @@ const FEATURES = [
     id: 'communities',
     title: 'Communities',
     description: 'Connect with people around the places you share — your neighbourhood, gym, park or school.',
-    image: '/viaris-website/images/Connected%20Communities%20Carpool%20Map.png',
+    image: '/viarisride_new_web/images/Connected%20Communities%20Carpool%20Map.png',
     icon: Users,
     path: 'M520 30 C554 54 620 60 690 66 C780 74 835 82 864 116 C882 138 887 184 890 236'
   }

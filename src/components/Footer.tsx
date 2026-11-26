@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="vr-footer" aria-label="Viaris Ride footer">
       <div className="vr-footer__inner">
         <a className="vr-footer__brand" href="#home" aria-label="Viaris home">
-          <img className="vr-footer__logo" src="/viaris-website/images/logo.jpeg" alt="Viaris Ride" />
+          <img className="vr-footer__logo" src="/viarisride_new_web/images/logo.jpeg" alt="Viaris Ride" />
         </a>
 
         <div className="vr-footer__main">
