@@ -34,6 +34,7 @@
 .community-registration__phone:focus-within{border-color:#789861;box-shadow:0 0 0 3px rgba(120,152,97,.12)}
 .community-registration__phone>span{padding:0 12px;border-right:1px solid #e5e9e2;color:#69776b;font-size:12px}
 .community-registration__phone input{height:100%;border:0;border-radius:0;background:transparent;box-shadow:none!important}
+.community-registration__error{margin:0;padding:10px 12px;border:1px solid #e7b8b8;border-radius:6px;background:#fdf3f3;color:#8f2c2c;font-size:12px;line-height:1.5}
 .community-registration__submit-row{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-top:3px}
 .community-registration__submit-row p{max-width:250px;margin:0;color:#8a958a;font-size:10px;line-height:1.6}
 .community-registration__submit-row button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-width:146px;min-height:49px;padding:0 20px;border:0;border-radius:6px;background:#294332;color:#fff;font:inherit;font-size:12px;font-weight:650;cursor:pointer;transition:background .18s ease,transform .18s ease}

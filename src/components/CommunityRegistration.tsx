@@ -1,16 +1,55 @@
 import { useState } from 'react';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import '../styles/community-registration.css';
 
 const communityTypes = ['School', 'Workplace', 'Apartments', 'Gated community', 'Other'];
 
 export default function CommunityRegistration() {
   const [communityType, setCommunityType] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // Connect this handler to the approved lead destination before launch.
+    if (!communityType || submitting) return;
+
+    if (!supabase) {
+      setError('Submission service is not configured. Please try again later.');
+      return;
+    }
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const communityName = String(formData.get('communityName') ?? '').trim();
+    const rawPhone = String(formData.get('phone') ?? '').trim();
+    const phone = rawPhone.startsWith('+') ? rawPhone : `+91 ${rawPhone}`;
+    const email = String(formData.get('email') ?? '').trim();
+    const address = String(formData.get('address') ?? '').trim();
+
+    setSubmitting(true);
+    setError(null);
+
+    const { error: insertError } = await supabase
+      .from('community_registration_requests')
+      .insert({
+        community_name: communityName,
+        community_type: communityType,
+        phone,
+        email,
+        address,
+      });
+
+    setSubmitting(false);
+
+    if (insertError) {
+      setError('Could not submit your request. Please check your details and try again.');
+      return;
+    }
+
+    form.reset();
+    setCommunityType('');
     setSubmitted(true);
   }
 
@@ -32,7 +71,7 @@ export default function CommunityRegistration() {
             <div className="community-registration__success" role="status">
               <CheckCircle2 size={28} strokeWidth={1.5} />
               <h3>Thanks for reaching out.</h3>
-              <p>The form interface is ready. Enquiry delivery will be enabled once the submission destination is connected.</p>
+              <p>We’ve received your community request and our team will reach out shortly.</p>
               <button type="button" onClick={() => setSubmitted(false)}>Back to form</button>
             </div>
           ) : (
@@ -82,9 +121,15 @@ export default function CommunityRegistration() {
                 <textarea name="address" autoComplete="street-address" placeholder="Building / area, city, state, PIN code" rows={3} required />
               </label>
 
+              {error && (
+                <p className="community-registration__error" role="alert">{error}</p>
+              )}
+
               <div className="community-registration__submit-row">
                 <p>Your details will only be used to follow up on this enquiry.</p>
-                <button type="submit" disabled={!communityType}>Submit <ArrowUpRight size={16} /></button>
+                <button type="submit" disabled={!communityType || submitting}>
+                  {submitting ? 'Submitting...' : 'Submit'} <ArrowUpRight size={16} />
+                </button>
               </div>
             </form>
           )}
