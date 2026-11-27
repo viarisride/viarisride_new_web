@@ -5,8 +5,16 @@ import '../styles/community-registration.css';
 
 const communityTypes = ['School', 'Workplace', 'Apartments', 'Gated community', 'Other'];
 
+function validateCommunitySize(value: string) {
+  if (!value) return 'Please enter an approximate community size.';
+  if (!/^\d+$/.test(value) || Number(value) < 1) return 'Enter a positive whole number.';
+  return '';
+}
+
 export default function CommunityRegistration() {
   const [communityType, setCommunityType] = useState('');
+  const [communitySize, setCommunitySize] = useState('');
+  const [communitySizeError, setCommunitySizeError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -23,6 +31,12 @@ export default function CommunityRegistration() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const communityName = String(formData.get('communityName') ?? '').trim();
+    const submittedCommunitySize = String(formData.get('communitySize') ?? '');
+    const sizeError = validateCommunitySize(submittedCommunitySize);
+    if (sizeError) {
+      setCommunitySizeError(sizeError);
+      return;
+    }
     const rawPhone = String(formData.get('phone') ?? '').trim();
     const phone = rawPhone.startsWith('+') ? rawPhone : `+91 ${rawPhone}`;
     const email = String(formData.get('email') ?? '').trim();
@@ -35,6 +49,7 @@ export default function CommunityRegistration() {
       .from('community_registration_requests')
       .insert({
         community_name: communityName,
+        community_size: Number(submittedCommunitySize),
         community_type: communityType,
         phone,
         email,
@@ -50,6 +65,8 @@ export default function CommunityRegistration() {
 
     form.reset();
     setCommunityType('');
+    setCommunitySize('');
+    setCommunitySizeError('');
     setSubmitted(true);
   }
 
@@ -84,6 +101,42 @@ export default function CommunityRegistration() {
               <label className="community-registration__field community-registration__field--full">
                 <span>Community name <b>*</b></span>
                 <input name="communityName" placeholder="e.g. Green Valley Residences" autoComplete="organization" required />
+              </label>
+
+              <label className="community-registration__field community-registration__field--full">
+                <span>Approximate community size <b>*</b></span>
+                <input
+                  name="communitySize"
+                  type="number"
+                  min="1"
+                  step="1"
+                  inputMode="numeric"
+                  placeholder="e.g. 500 residents / members"
+                  value={communitySize}
+                  autoComplete="off"
+                  required
+                  aria-describedby="community-size-help"
+                  aria-invalid={Boolean(communitySizeError)}
+                  onChange={(event) => {
+                    const value = event.currentTarget.value;
+                    setCommunitySize(value);
+                    setCommunitySizeError(value ? validateCommunitySize(value) : '');
+                  }}
+                  onKeyDown={(event) => {
+                    if (['e', 'E', '+', '-', '.'].includes(event.key)) event.preventDefault();
+                  }}
+                  onInvalid={(event) => {
+                    setCommunitySizeError(event.currentTarget.validity.valueMissing
+                      ? 'Please enter an approximate community size.'
+                      : 'Enter a positive whole number.');
+                  }}
+                  onBlur={() => {
+                    if (communitySize) setCommunitySizeError(validateCommunitySize(communitySize));
+                  }}
+                />
+                <span className="community-registration__helper" id="community-size-help" role={communitySizeError ? 'alert' : undefined}>
+                  {communitySizeError || 'Approximately how many people are part of your community?'}
+                </span>
               </label>
 
               <fieldset className="community-registration__categories">
